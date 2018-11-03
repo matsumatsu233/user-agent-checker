@@ -9,7 +9,7 @@ app.prepare()
 .then(() => {
   const server = express();
 
-  fs.readdirSync("./apis").forEach(function(file) {
+  fs.readdirSync("./apis").forEach((file) => {
     if (file.substr(-3) == ".js") {
       route = require(`./apis/${file}`);
       route.start(server);
